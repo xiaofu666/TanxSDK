@@ -10,9 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// 点击返回按钮通知
+extern NSString *const kTXAdWebControllerNavBackBtnClicked;
+
 @interface TXAdWebController : UIViewController
 
+/// 设置webview url
 @property (nonatomic, copy) NSString *url;
+
+/// 返回按钮
+@property (nonatomic, strong, readonly) UIButton *navBackBtn;
 
 @end
 

@@ -13,31 +13,20 @@
  */
 @interface TXAdTestInterface : NSObject
 
-
 /* ----------- videoCaches ----------- */
-+ (NSArray *)videoCache_getAllCacheURL;
-+ (void)videoCache_cleanAllCaches;
-+ (void)videoCache_cleanCacheWithMaxItems;
-+ (void)videoCache_cacheDeleteWithUrl:(NSURL *)url;
-+ (void)videoCache_handleVideoCacheFiles:(NSString *)url
-                           maxCacheCount:(NSInteger)maxCacheCount;
+// 2 ---- 信息流；3 ---- 激励视频
++ (NSArray *)videoCache_getAllCacheURLWithType:(NSUInteger)type;
++ (void)videoCache_cleanAllCachesWithType:(NSUInteger)type;
++ (void)videoCache_cacheDeleteWithType:(NSUInteger)type url:(NSURL *)url;
++ (void)videoCache_downLoadCacheFilesWithType:(NSUInteger)type url:(NSString *)url;
 
 /* ----------- splash Caches action ----------- */
-+ (NSArray *)splash_getMaterials ;
-+ (NSString *)splash_loadResponse ;
-+ (void)splash_saveResponse:(NSString *)res ;
-+ (void)splash_deleteResponse;
++ (NSArray *)splash_getMaterials;
++ (NSString *)splash_loadResponse:(NSString *)pid;
++ (void)splash_saveResponse:(NSString *)res pid:(NSString *)pid;
++ (void)splash_deleteResponse:(NSString *)pid;
 + (void)splash_deleteMaterial:(NSString *)path;
 
-/* ----------- Ad debug config action ----------- */
-+ (BOOL)debugConfig_isAdDev;
-+ (void)setDebugConfig_isAdDev:(BOOL)isAdDev;
-
-+ (BOOL)debugConfig_isConfigDev;
-+ (void)setDebugConfig_isConfigDev:(BOOL)isConfigDev;
-
-+ (BOOL)debugConfig_isUtDev;
-+ (void)setDebugConfig_isUtDev:(BOOL)isUtDev;
 
 @end
 

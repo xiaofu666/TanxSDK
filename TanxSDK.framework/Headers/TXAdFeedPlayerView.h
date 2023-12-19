@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TanxSDK/TXAdModel.h>
-#import <TanxSDK/TXAdFeedTemplateConfig.h>
+#import "TXAdModel.h"
+#import "TXAdFeedTemplateConfig.h"
+
+
+NS_ASSUME_NONNULL_BEGIN
 
 @protocol TXAdFeedPlayerViewDelegate <NSObject>
 
@@ -74,7 +77,7 @@
  * @param config    配置model，playConfig：1、不自动播放 2、自动播放 3、Wifi下自动播放，默认
  *                         setMute，静音，默认YES
  */
-- (void)updatePlayerConfig:(TXAdFeedTemplateConfig *)config;
+ - (void)updatePlayerConfig:(TXAdFeedTemplateConfig *)config;
 
 /**
  * 播放
@@ -88,7 +91,7 @@
 
 /**
  * 设置音量
- * @param volume 音量
+ * @param volume 音量，0 - 1
  */
 - (void)setVolume:(float)volume;
 
@@ -110,3 +113,4 @@
 
 @end
 
+NS_ASSUME_NONNULL_END

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <TanxSDK/TXAdJSONModel.h>
+#import "TXAdJSONModel.h"
 
 #import <UIKit/UIKit.h>
 
@@ -15,12 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TXAdShowModeModel :  TXAdJSONModel
 @property (nonatomic, assign, readwrite) CGFloat title_size;
-@property (nonatomic, copy, readwrite) NSString *title_color;
+@property (nonatomic, copy  , readwrite) NSString *title_color;
 @property (nonatomic, assign, readwrite) CGFloat ad_size;
-@property (nonatomic, copy, readwrite) NSString *ad_color;
+@property (nonatomic, copy  , readwrite) NSString *ad_color;
 @property (nonatomic, assign, readwrite) CGFloat adv_size;
-@property (nonatomic, copy, readwrite) NSString *adv_color;
-@property (nonatomic, copy, readwrite) NSString *bg_color;
+@property (nonatomic, copy  , readwrite) NSString *adv_color;
+@property (nonatomic, copy  , readwrite) NSString *bg_color;
 @property (nonatomic, assign, readwrite) CGFloat pic_radius;
 @end
 

@@ -11,7 +11,11 @@
 
 @interface TXAdBidModel : TXAdJSONModel
 
-@property (nonatomic, copy)  NSString *bidPrice;
+/// tanx广告价格
+@property (nonatomic, copy, readonly)  NSString *bidPrice;
+
+/// 如tanx广告竞价失败，支持回传三方竞价成功的价格
+@property (nonatomic, copy)  NSString *winPrice;
 
 @end
 

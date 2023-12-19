@@ -6,7 +6,9 @@
 //  Copyright © 2023 tanx.com. All rights reserved.
 //
 
-#import <TanxSDK/TXAdSlotModel.h>
+#import "TXAdSlotModel.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface TXAdFeedSlotModel : TXAdSlotModel
 
@@ -18,4 +20,5 @@
 
 @end
 
+NS_ASSUME_NONNULL_END
 

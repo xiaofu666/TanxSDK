@@ -9,7 +9,7 @@
 #ifndef TXAdSplashManagerDelegate_h
 #define TXAdSplashManagerDelegate_h
 
-#import <TanxSDK/TXAdManagerDelegate.h>
+#import "TXAdManagerDelegate.h"
 
 @protocol TXAdSplashManagerDelegate <NSObject,TXAdManagerDelegate>
 

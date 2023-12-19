@@ -12,14 +12,7 @@
 
 typedef NS_ENUM(NSInteger, TXAdSlideDirection){
     TXAdSlideTransDirection = 1, // 横向
-    TXAdSlideVerDirection = 0 // 纵向
-};
-
-typedef NS_ENUM(NSInteger, TXAdOpenType) {
-    TXAdOpenTypeDeepLink = 1, // 唤端
-    TXAdOpenTypeDeepH5 = 2, // h5跳转
-    TXAdOpenTypeOther = 3,
-    TXAdOpenTypeDeepUniLink = 4
+    TXAdSlideVerDirection = 2 // 纵向
 };
 
 typedef NS_ENUM(NSInteger, TXAdInteractionType) {
@@ -45,21 +38,6 @@ typedef NS_ENUM(NSInteger, TXAdSDKLogLevel) {
 };
 
 
-
-///广告素材类型
-typedef NS_ENUM(NSInteger, TXAdFormatType) {
-    TXAdFormatUnknown              = 0,
-    TXAdFormatGeneralVideo         = 1,
-    TXAdFormatHTML,
-    TXAdFormatImage,
-};
-
-///广告位
-typedef NS_ENUM(NSInteger, TXAdType) {
-    
-    TXAdTypeSplash         = 12,
-    TXAdTypeFeeds          = 23,
-};
 
 
 

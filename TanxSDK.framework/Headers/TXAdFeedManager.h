@@ -8,14 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <TanxSDK/TXAdFeedManagerDelegate.h>
-#import <TanxSDK/TXAdFeedTemplateConfig.h>
-#import <TanxSDK/TXAdFeedModel.h>
-#import <TanxSDK/TXAdFeedView.h>
-#import <TanxSDK/TXAdFeedBinder.h>
 
-#import <TanxSDK/TXAdModel.h>
-#import <TanxSDK/TXAdFeedSlotModel.h>
+#import "TXAdFeedManagerDelegate.h"
+#import "TXAdFeedTemplateConfig.h"
+#import "TXAdFeedView.h"
+#import "TXAdFeedBinder.h"
+#import "TXAdModel.h"
+#import "TXAdFeedSlotModel.h"
 
 @class TXAdFeedModule;
 
@@ -33,15 +32,8 @@ typedef NS_ENUM(NSUInteger, TXAdFeedAdType) {
     TXAdFeedAdTypeVideo = 2,       // 视频广告
 };
 
-typedef void(^TXAdGetFeedAdBlock)(NSArray <TXAdFeedModel *> * _Nullable viewModelArray, NSError * _Nullable error);
-
+/// 获取广告数据回调block
 typedef void(^TXAdFeedAdsBlock)(NSArray <TXAdModel *> * _Nullable viewModelArray, NSError * _Nullable error);
-
-/// 获取模版block ，customTemplates与feedTemplates 互斥，二者只返回一个
-///
-/// feedTemplates          信息流返回模版数组
-/// customTemplates     信息流返回自渲染模版数组，
-typedef void(^TXFeedTemplatesBlock)(NSArray <TXAdFeedModule *> * _Nullable feedTemplates, NSArray <TXAdFeedBinder *> * _Nullable customTemplates, NSError * _Nullable error);
 
 @interface TXAdFeedModule : NSObject
 
@@ -50,9 +42,6 @@ typedef void(^TXFeedTemplatesBlock)(NSArray <TXAdFeedModule *> * _Nullable feedT
 
 /// 模板的size
 @property (nonatomic, assign) CGSize size;
-
-/// 当前数据源，即将废弃，使用adModel
-@property (nonatomic, strong) TXAdFeedModel *feed DEPRECATED_MSG_ATTRIBUTE("即将废弃，使用adModel");;
 
 /// 当前数据源
 @property (nonatomic, strong) TXAdModel *adModel;
@@ -130,39 +119,6 @@ typedef void(^TXFeedTemplatesBlock)(NSArray <TXAdFeedModule *> * _Nullable feedT
  */
 - (void)resetFeedConfig:(TXAdFeedTemplateConfig *)config;
 
-/**------------------------------------------------- 以下方法将要废弃，请使用最新方法 --------------------------------------------------------------**/
-
-/// 自定义初始化
-/// @param delegate 委托协议对象
-- (instancetype)initWithDelegate:(id<TXAdFeedManagerDelegate>)delegate DEPRECATED_MSG_ATTRIBUTE("该接口已废弃，请使用 initWithSlotModel: or initWithPid:");
-
-/// 发起获取feed广告请求
-/// @param block 返回广告数据（@媒体可获取通过TXAdFeedModel的ecpm获取报价，若为空则表明该媒体没有获取权限）
-/// @param pid 广告pid
-/// @param postionArray 获取多少个广告（最多不超过三个），放在哪些坑位（比如 [@2，@6，@9]），⚠️⚠️这些坑位下标从0开始⚠️⚠️，⚠️⚠️和第几页无关不需要累加上页大小⚠️⚠️。
-/// @param renderMode 渲染模式（模板渲染 or 自渲染）
-- (void)getFeedAdWithBlock:(TXAdGetFeedAdBlock)block
-                   withPid:(NSString * __nonnull)pid
-               andPosArray:(NSArray <NSNumber *> *)postionArray
-                renderMode:(TXAdFeedRenderMode)renderMode DEPRECATED_MSG_ATTRIBUTE("即将废弃，请使用getFeedAdsWithAdCount:renderMode:adsBlock:");
-
-/// 通过广告数据，获取信息流广告模板（返回给媒体的模板是上下左右不留padding的，由媒体自己控制padding）
-/// @param modelArray 信息流广告数据数组（必传）
-/// @param isJoinBidding 是否参竞
-/// @param creativeIdArray 参竞后，成功竞得的creativeId数组
-/// @param config 模板的相关UI配置
-- (NSArray <TXAdFeedModule *> *)renderFeedTemplateWithModel:(NSArray <TXAdFeedModel *> *__nonnull)modelArray
-                                                joinBidding:(BOOL)isJoinBidding
-                                             andCreativeIds:(NSArray <NSString *>*__nullable)creativeIdArray
-                                          andTemplateConfig:(TXAdFeedTemplateConfig *)config DEPRECATED_MSG_ATTRIBUTE("即将废弃，请使用renderFeedTemplateWithModel:config:");
-
-/// 通过广告数据，获取自渲染绑定器
-/// @param modelArray 信息流广告数据数组（必传）
-/// @param isJoinBidding 是否参竞
-/// @param creativeIdArray 参竞后，成功竞得的creativeId数组
-- (NSArray <TXAdFeedBinder *> *)customRenderingBinderWithModels:(NSArray <TXAdFeedModel *> *__nonnull)modelArray
-                                                    joinBidding:(BOOL)isJoinBidding
-                                                 andCreativeIds:(NSArray <NSString *>*__nullable)creativeIdArray DEPRECATED_MSG_ATTRIBUTE("即将废弃，请使用customRenderingBinderWithModels:");
 
 #pragma mark - Unavailable
 /// ("该接口已废弃，请使用 initWithSlotModel: or initWithPid:")
@@ -170,11 +126,6 @@ typedef void(^TXFeedTemplatesBlock)(NSArray <TXAdFeedModule *> * _Nullable feedT
 
 /// ("该接口已废弃，请使用 initWithSlotModel: or initWithPid:")
 + (instancetype) new  NS_UNAVAILABLE;
-
-/// 自定义初始化
-/// @param delegate 委托协议对象
-/// @param scrollView 滑动容器
-- (instancetype)initWithDelegate:(id<TXAdFeedManagerDelegate>)delegate andScrollView:(nullable UIScrollView *)scrollView DEPRECATED_MSG_ATTRIBUTE("该接口已废弃，请使用 initWithSlotModel: or initWithPid:");
 
 @end
 

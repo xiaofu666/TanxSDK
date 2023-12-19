@@ -6,7 +6,7 @@
 //  Copyright © 2023 tanx.com. All rights reserved.
 //
 
-#import <TanxSDK/TXAdSlotModel.h>
+#import "TXAdSlotModel.h"
 
 
 @interface TXAdTableScreenSlotModel : TXAdSlotModel

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'SFTanxSDK'
-    s.version          = '2.9.14'
+    s.version          = '3.1.1'
     s.summary          = 'SFTanxSDK'
 
     s.description      = <<-DESC
@@ -17,9 +17,9 @@ Pod::Spec.new do |s|
     s.frameworks = 'AssetsLibrary', 'MapKit', 'JavaScriptCore', 'StoreKit', 'MobileCoreServices', 'WebKit', 'MediaPlayer', 'CoreMedia', 'AVFoundation', 'CoreLocation', 'CoreTelephony', 'SystemConfiguration', 'AdSupport', 'CoreMotion', 'Security', 'QuartzCore', 'CoreGraphics', 'SafariServices', 'UIKit', 'Foundation', 'AppTrackingTransparency', 'DeviceCheck'
     s.libraries = 'c++', 'c++abi', 'resolv', 'xml2', 'bz2', 'z', 'iconv', 'sqlite3'
 
-    s.vendored_frameworks = 'TanxSDK.framework', 'TNXASDK.framework'
-    s.resource = 'TanxID.bundle'
-
     s.xcconfig = { "OTHER_LDFLAGS" => "-ObjC" }
     s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 arm64' }
+
+    s.vendored_frameworks = 'TanxSDK.framework', 'TNXASDK.framework'
+    s.resource = 'TanxID.bundle'
 end

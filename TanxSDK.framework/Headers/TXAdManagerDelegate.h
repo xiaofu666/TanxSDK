@@ -9,7 +9,7 @@
 #ifndef TXAdManagerDelegate_h
 #define TXAdManagerDelegate_h
 
-#import <TanxSDK/TXAdModel.h>
+#import "TXAdModel.h"
 
 @protocol TXAdManagerDelegate <NSObject>
 

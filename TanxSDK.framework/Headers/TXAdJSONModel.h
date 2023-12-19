@@ -5,9 +5,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import <TanxSDK/TXAdJSONModelError.h>
-#import <TanxSDK/TXAdJSONValueTransformer.h>
-#import <TanxSDK/TXAdJSONKeyMapper.h>
+#import "TXAdJSONModelError.h"
+#import "TXAdJSONValueTransformer.h"
+#import "TXAdJSONKeyMapper.h"
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 #if TARGET_IPHONE_SIMULATOR

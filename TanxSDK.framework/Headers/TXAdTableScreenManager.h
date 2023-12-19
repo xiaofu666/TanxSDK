@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <TanxSDK/TXAdRewardVideoAdConfiguration.h>
-#import <TanxSDK/TXAdManagerDelegate.h>
-#import <TanxSDK/TXAdModel.h>
-#import <TanxSDK/TXAdTableScreenSlotModel.h>
+
+#import "TXAdManagerDelegate.h"
+#import "TXAdModel.h"
+#import "TXAdTableScreenSlotModel.h"
 
 
 NS_ASSUME_NONNULL_BEGIN

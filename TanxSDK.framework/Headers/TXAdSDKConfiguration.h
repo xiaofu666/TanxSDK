@@ -6,7 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <TanxSDK/TXAdEnum.h>
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -16,16 +15,18 @@ NS_ASSUME_NONNULL_BEGIN
 /// 当前的APPID(只读)
 @property (nonatomic, copy, readonly) NSString *appID;
 @property (nonatomic, copy, readonly) NSString *appKey;
-/// 开发阶段调试相关的配置(只读)
-@property (nonatomic, assign, readonly) TXAdSDKLogLevel logLevel;
 
 /// 当前是否禁止获取idfa(只读)
 @property (nonatomic, assign, readonly) BOOL forbiddenUseIDFA;
+
 ///是否支持实时曝光
 @property (nonatomic, assign) BOOL realTimeSwitch;
 
 /// 媒体自定义用户质量,字段格式{"key":["value"]}
 @property (nonatomic, strong) NSDictionary<NSString *,NSArray *> * userTag;
+
+// 媒体用户ID 仅做透传给服务端
+@property (nonatomic, strong) NSString * mediaUid;
 
 /// 单例初始化
 + (instancetype)sharedConfiguration;
@@ -58,10 +59,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 关闭个性化推荐控制
 /// @param closed YES:禁止获取
 - (void)closePersonalized:(BOOL)closed;
-
-/// 设置开发阶段调试相关配置
-/// @param debugSetting debugLevel
-- (void)setDebugSetting:(TXAdSDKLogLevel *)debugSetting;
 
 
 @property (nonatomic, assign) CGFloat titleSize;

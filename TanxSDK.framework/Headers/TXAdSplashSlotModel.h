@@ -6,7 +6,7 @@
 //  Copyright © 2023 tanx.com. All rights reserved.
 //
 
-#import <TanxSDK/TXAdSlotModel.h>
+#import "TXAdSlotModel.h"
 #import <UIKit/UIKit.h>
 
 @interface TXAdSplashSlotModel : TXAdSlotModel
@@ -16,6 +16,9 @@
 
 /// 允许开屏请求最长时间(推荐设置3秒)
 @property (nonatomic, assign) NSTimeInterval waitSyncTimeout;
+
+/// 允许开屏在曝光后，发起预请求广告数据，默认YES
+@property (nonatomic, assign) BOOL autoPreLoadData;
 
 /**----------------------------------- 模版UI配置 ------------------------------------**/
 /// 跳转按钮颜色

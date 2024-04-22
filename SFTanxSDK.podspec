@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'SFTanxSDK'
-    s.version          = '3.1.1'
+    s.version          = '3.4.1'
     s.summary          = 'SFTanxSDK'
 
     s.description      = <<-DESC

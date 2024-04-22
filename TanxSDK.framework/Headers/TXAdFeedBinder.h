@@ -38,9 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  获取播放器view，需加到feedView使用
- *      1、由于视频播放器比较耗内存，建议使用的时候进行获取，不使用时调用destoryBinder及时释放
+ *      1、由于视频播放器比较耗内存，建议使用的时候进行获取，不使用时调用destoryPlayerView及时释放
  *
- *  @param frame           播放器大小
  *  @return playerView  播放器view
  */
 - (nullable TXAdFeedPlayerView *)getVideoAdViewWithFrame:(CGRect)frame

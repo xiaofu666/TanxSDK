@@ -10,8 +10,8 @@ Pod::Spec.new do |s|
     s.homepage         = 'https://github.com/xiaofu666/TanxSDK'
     s.license      = { :type => "MIT", :file => "LICENSE" }
     s.author       = { "小富" => "3290235031@qq.com" }
-    s.source       = { :git => 'https://github.com/xiaofu666/TanxSDK.git', :tag => s.version.to_s }
-
+    s.source = { :http => "https://github.com/xiaofu666/SFTanxSDK/releases/download/#{s.version}/TanxSDK.zip" }
+    
     s.platform     = :ios, "9.0"
     
     s.frameworks = 'AssetsLibrary', 'MapKit', 'JavaScriptCore', 'StoreKit', 'MobileCoreServices', 'WebKit', 'MediaPlayer', 'CoreMedia', 'AVFoundation', 'CoreLocation', 'CoreTelephony', 'SystemConfiguration', 'AdSupport', 'CoreMotion', 'Security', 'QuartzCore', 'CoreGraphics', 'SafariServices', 'UIKit', 'Foundation', 'AppTrackingTransparency', 'DeviceCheck'
